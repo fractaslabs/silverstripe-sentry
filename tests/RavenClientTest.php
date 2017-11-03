@@ -9,7 +9,6 @@
 
 namespace PHPTek\Sentry\Test;
 
-use PHPTek\Sentry\Log\SentryLogger;
 use PHPTek\Sentry\Handler\SentryMonologHandler;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Core\Config\Config;
@@ -33,15 +32,15 @@ class RavenClientTest extends SapphireTest
      * Setup a dummy Sentry DSN so our errors are not actually sent
      * anywhere
      */
-    public function setUpOnce()
+    public static function setUpBeforeClass()
     {
-        parent::setUpOnce();
+        parent::setUpBeforeClass();
 
-        Config::inst()->update(
-            'PHPTek\Sentry\Adaptor\SentryClientAdaptor',
-            'opts',
-             ['dsn' => 'http://deacdf9dfedb24ccdce1b90017b39dca:deacdf9dfedb24ccdce1b90017b39dca@sentry.mydomain.nz/44']
-        );
+//        Config::inst()->update(
+//            'PHPTek\Sentry\Adaptor\SentryClientAdaptor',
+//            'opts',
+//             ['dsn' => 'http://deacdf9dfedb24ccdce1b90017b39dca:deacdf9dfedb24ccdce1b90017b39dca@sentry.mydomain.nz/44']
+//        );
     }
 
     /**

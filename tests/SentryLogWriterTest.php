@@ -19,14 +19,14 @@ class SentryLogWriterTest extends SapphireTest
     /**
      * Setup test-specific context
      */
-	public function setUpOnce()
+    public static function setUpBeforeClass()
     {
-        parent::setUpOnce();
-
+        parent::setUpBeforeClass();
+        
         // No idea why these need to be explicitly set. Although the suite runs,
         // we always see nest() / unnest() errors from phpunit..
-        Injector::nest();
-        Config::nest();
+//        Injector::nest();
+//        Config::nest();
 
 		\Phockito::include_hamcrest(true);
 
